@@ -21,7 +21,7 @@ class App extends Component {
           <div className="rectangle rectangle2"></div>
           <div className="rectangle rectangle3"></div>
           <h2>Cliquez sur une playlist pour commencer le blindtest</h2>
-          <div className="searchbar"> la catégorie que vous voulez...< Searchbar /></div>
+          <div className="searchbar">recherchez la catégorie que vous voulez...< Searchbar /></div>
           <p>Playlists</p>
         </section>
         <section className="section3">
