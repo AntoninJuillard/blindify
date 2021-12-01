@@ -4,7 +4,7 @@ import './Playlist.css'
 export default class Playlist extends Component {
     render() {
         return (
-            <div class="playlist">
+            <div className="playlist">
                 
             </div>
         )

@@ -42,7 +42,7 @@ body{
     color: #052F5F;
 }
 
-.section1 div{
+.section1 a{
     font-size: 30px;
     width: 329px;
     height: 95px;
@@ -52,6 +52,7 @@ body{
     line-height: 95px;
     color: #ffffff;
     margin-top: 35px;
+    text-decoration: none;
 }
 
 .section2{
@@ -102,8 +103,20 @@ body{
     font-weight: 600;
     font-size: 26px;
     color: #ffffff;
-    border-bottom: #ffffff solid 1px;
     line-height: 35px;
+    background: none;
+    width: 38vw;
+    border: none;
+    border-bottom: #ffffff solid 1px;
+}
+
+.section2 .searchbar::placeholder{
+    opacity: 1;
+    color: #ffffff;
+}
+
+.section2 .searchbar:focus{
+    outline: none;
 }
 
 .section2 p{

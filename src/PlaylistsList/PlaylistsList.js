@@ -5,10 +5,8 @@ import './PlaylistsList.css'
 export default class PlaylistsList extends Component {
     render() {
         return (
-            <div class="playlistList">
-                <Playlist />
-                
-                      
+            <div className="playlistList">
+                <Playlist />   
             </div>
         )
     }

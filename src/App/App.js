@@ -5,8 +5,11 @@ import './App.css';
 import Logo from '../img/BlindifyLogo.png';
 import Searchbar from "../Searchbar/Searchbar";
 
+
+
 class App extends Component {
 // function App() {
+
   render(){
     return (
       <div className="App">
@@ -14,14 +17,14 @@ class App extends Component {
           <img src={Logo} alt="Blindify Logo"/>
           <h1>Jouez au Blindtest musical avec vos amis !</h1>
           <h2>Jouez maintenant à Blindify et découvrez qui a la meilleure culture musicale</h2>
-          <div>Jouer maintenant</div>
+          <a href="#section2" className="playButton">Jouer maintenant</a>
         </section>
-        <section className="section2">
+        <section className="section2" id="section2">
           <div className="rectangle rectangle1"></div>
           <div className="rectangle rectangle2"></div>
           <div className="rectangle rectangle3"></div>
           <h2>Cliquez sur une playlist pour commencer le blindtest</h2>
-          <div className="searchbar">recherchez la catégorie que vous voulez...< Searchbar /></div>
+          <input type="text" placeholder="recherchez la catégorie que vous voulez..." className="searchbar"/>
           <p>Playlists</p>
         </section>
         <section className="section3">
