@@ -23,30 +23,6 @@ class App extends Component {
       },
       {
         cover: '#FFF000'
-      },
-      {
-        cover: '#F00000'
-      },
-      {
-        cover: '#FF0000'
-      },
-      {
-        cover: '#FFF000'
-      },
-      {
-        cover: '#F00000'
-      },
-      {
-        cover: '#FF0000'
-      },
-      {
-        cover: '#FFF000'
-      },
-      {
-        cover: '#FF0000'
-      },
-      {
-        cover: '#FFF000'
       }
       
     ]
