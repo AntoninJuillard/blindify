@@ -6,16 +6,16 @@ export default class Game extends Component {
     render() {
         return (
             <div>
-                <div className='background'>
                 <img src={Logo} alt="Blindify Logo"/>
-                <div className= "gameBox">
+                <div className='background'>    
+                    <div className= "gameContainer">
                     <div className = "playlistName">
                         <h2>Nom de la playlists</h2>
                     </div>
-                    <div className= "Title">
+                    <div className= "question">
                         <h2> Quelle est le nom de cette musique?</h2>
                     </div>
-                </div> 
+                    </div> 
                 </div>
           
             </div>
