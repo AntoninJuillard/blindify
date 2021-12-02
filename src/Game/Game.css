@@ -3,6 +3,9 @@ h4{
     font-size: 144px;
 }
 
+p{
+    margin: auto;
+}
 
 
 
@@ -75,7 +78,12 @@ img{
 
 
 .questionFont{
+    margin: 0;
+    padding: 10px 20px 10px 20px;
     font-size: 30px;
+    border-radius: 8px;
+    border: 0.2px solid rgba(254,126,94);
+    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
 }
 
 .namePlaylist{
@@ -94,11 +102,13 @@ img{
 }
 
 .responseContainer{
-    width: 538px;
+    width: 545px;
+    height: 150px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: space-between;
 }
 
 .equipe1, .equipe2{
@@ -108,5 +118,9 @@ img{
 }
 
 .response1, .response2, .response3, .response4{
-    width: 269px;
+    width: 250px;
+    padding: 20px 5px 20px 5px;
+    border-radius: 8px;
+    border: 0.2px solid rgba(254,126,94);
+    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
 }
