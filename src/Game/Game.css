@@ -27,6 +27,7 @@ img{
 
 .playlistName{
     width: 1300px;
+    font-size:24px;
 
 }
 
@@ -34,4 +35,50 @@ img{
     width:  1386px;
     display: flex;
     justify-content: center;
+}
+
+.equipeContainer{
+   display:flex;
+   justify-content: space-between;
+   width: 1000px;
+}
+
+.equipe1{
+    height: 345px;
+    width:  220px;
+    background: #F1E9A7;
+    border-radius: 20px;
+}
+
+.equipe2{
+    height: 345px;
+    width:  220px;
+    background: #FD8762;
+    border-radius: 20px;
+}
+
+.numerQuestion{
+    font-size: 30px;
+    color: #FD8762;
+}
+
+.questionFont{
+    font-size: 30px;
+}
+
+.namePlaylist{
+    font-size: 24px;
+}
+
+.fontNumber{
+    font-size: 30px;
+}
+.fontEquipe{
+    font-size: 24px;
+}
+.fontScore{
+    font-size: 144px;
+}
+.fontName{
+    font-size:20px;
 }
