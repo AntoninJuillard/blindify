@@ -1,14 +1,56 @@
 // import React from "react";
 import React, { Component } from "react";
-import PlaylistsList from '../PlaylistsList/PlaylistsList';
 import './App.css';
 import Logo from '../img/BlindifyLogo.png';
 import Searchbar from "../Searchbar/Searchbar";
+import Playlist from "../Playlist/Playlist";
 
 
 
 class App extends Component {
 // function App() {
+
+  state = {
+    playlists : [
+      {
+        cover: '#000000'
+      },
+      {
+        cover: '#F00000'
+      },
+      {
+        cover: '#FF0000'
+      },
+      {
+        cover: '#FFF000'
+      },
+      {
+        cover: '#F00000'
+      },
+      {
+        cover: '#FF0000'
+      },
+      {
+        cover: '#FFF000'
+      },
+      {
+        cover: '#F00000'
+      },
+      {
+        cover: '#FF0000'
+      },
+      {
+        cover: '#FFF000'
+      },
+      {
+        cover: '#FF0000'
+      },
+      {
+        cover: '#FFF000'
+      }
+      
+    ]
+  }
 
   render(){
     return (
@@ -28,7 +70,8 @@ class App extends Component {
           <p>Playlists</p>
         </section>
         <section className="section3">
-          {/* < PlaylistsList /> */}
+          {/* < PlaylistsList playlists={this.state.playlists}/> */}
+          <Playlist playlists={this.state.playlists}/>
         </section>
       </div>
     );
