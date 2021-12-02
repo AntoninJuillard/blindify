@@ -4,6 +4,7 @@ import PlaylistsList from '../PlaylistsList/PlaylistsList';
 import './App.css';
 import Logo from '../img/BlindifyLogo.png';
 import Searchbar from "../Searchbar/Searchbar";
+import Game from '../Game/Game'
 
 
 
@@ -13,7 +14,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <section className="section1">
+        {/* <section className="section1">
           <img src={Logo} alt="Blindify Logo"/>
           <h1>Jouez au Blindtest musical avec vos amis !</h1>
           <h2>Jouez maintenant à Blindify et découvrez qui a la meilleure culture musicale</h2>
@@ -29,7 +30,9 @@ class App extends Component {
         </section>
         <section className="section3">
           < PlaylistsList/>
-        </section>
+        </section> */}
+        <Game/>
+
       </div>
     );
   }
