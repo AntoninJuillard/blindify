@@ -17,30 +17,29 @@ export default class Game extends Component {
                         </div>
                         <div className= "numberQuestion">
                             <h2 className="fontNumber">1/15</h2>
-                        </div> 
-                           
+                        </div>     
                     <div className = "equipeContainer">
                         <div className = "equipe1" >
                                 <h3 className ="fontEquipe">Equipe 1</h3>
-                                <h4 className ="fontScore">1</h4>
+                                <h4>1</h4>
                         </div>
-                        <div className = "reponseContainer">
-                                <div className = "reponse1" >
-                                  <p className ="fontName">Artiste et Titre1</p>
+                        <div className = "responseContainer fontName">
+                                <div className = "response1" >
+                                  <p>Artiste et Titre1</p>
                                 </div>
-                                <div className = "reponse2" >
-                                  <p className ="fontName">Artiste et Titre2</p>
+                                <div className = "response2" >
+                                  <p>Artiste et Titre2</p>
                                 </div>
-                                <div className = "reponse2" >
-                                  <p className ="fontName">Artiste et Titre3</p>
+                                <div className = "response3" >
+                                  <p>Artiste et Titre3</p>
                                 </div>
-                                <div className = "reponse4" >
-                                  <p className ="fontName">Artiste et Titre4</p>
+                                <div className = "response4" >
+                                  <p>Artiste et Titre4</p>
                                 </div>
                         </div>
                             <div className = "equipe2" >
                                 <h3 className="fontEquipe">Equipe 2</h3>
-                                <h4 className ="fontScore">1</h4>
+                                <h4>1</h4>
                             </div> 
                     </div>   
                 </div> 
