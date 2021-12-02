@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Playlist.css'
+import { Link } from "react-router-dom";
 
 export default class Playlist extends Component {
     render() {
@@ -12,11 +13,15 @@ export default class Playlist extends Component {
         //     </div>
         // )
         return this.props.playlists.map((pres) =>
-            <div className="playlist" style={{background:pres.cover}}>
-                <div className="playlistHover">
-                    <div className="triangle"></div>
-                    <p>Lancer le blindtest</p>
-                </div>
+        
+            <div className="playlist" style={{background:pres.cover}} key={pres.id}>
+                {/* mettre un state= avec les infos à transmettre à la page game dans la balise link */}
+                <Link to="game">
+                    <div className="playlistHover">               
+                        <div className="triangle"></div>
+                        <p>Lancer le blindtest</p>                  
+                    </div>
+                </Link>
             </div>
         )
     }
