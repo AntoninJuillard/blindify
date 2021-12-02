@@ -4,3 +4,9 @@
     background:linear-gradient(rgba(254,126,94), rgba(255,240,101, 0.5));
 }
 
+.gameBox{
+   height: 60vh;
+   width:  75vw;
+   background: white;
+   border-radius: 6%;
+}
