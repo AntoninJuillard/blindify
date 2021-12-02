@@ -28,7 +28,7 @@ class App extends Component {
           <p>Playlists</p>
         </section>
         <section className="section3">
-          {/* < PlaylistsList /> */}
+          < PlaylistsList/>
         </section>
       </div>
     );
