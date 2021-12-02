@@ -6,7 +6,7 @@ export default class Game extends Component {
         return (
             <div>
                 <div className='background'></div>
-                 <img src={Logo}></img>
+                <img src={Logo} alt="Blindify Logo"/>
             </div>
         )
     }
