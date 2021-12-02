@@ -46,7 +46,7 @@ export default class Homepage extends Component {
                     <p>Playlists</p>
                 </section>
                 <section className="section3">
-                    {/* < PlaylistsList playlists={this.state.playlists}/> */}
+                    {/* @ts-ignore */}
                     <Playlist playlists={this.state.playlists}/>
                 </section>
             </div>

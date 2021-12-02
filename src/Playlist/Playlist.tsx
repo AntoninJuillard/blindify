@@ -12,6 +12,8 @@ export default class Playlist extends Component {
         //         </div>
         //     </div>
         // )
+        
+// @ts-ignore (pour ignorer l'erreur :) property playlists does not exist
         return this.props.playlists.map((pres) =>
         
             <div className="playlist" style={{background:pres.cover}} key={pres.id}>
@@ -26,3 +28,6 @@ export default class Playlist extends Component {
         )
     }
 }
+
+
+    

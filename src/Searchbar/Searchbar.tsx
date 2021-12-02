@@ -5,7 +5,7 @@ export default class Searchbar extends Component {
     render() {
         return (
             <div className="searchbar">
-             
+                la search bar cousin
             </div>
         )
     }
