@@ -17,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Routes>
+            {/* @ts-ignore Homepage cassé quand ajoute un state dans homepage.tsx*/ }
             <Route path="/" element={<Homepage/>}/>
             <Route path="game" element={<Game/>}/>
           </Routes>

@@ -1,38 +1,45 @@
 import React, { Component } from "react";
 import './Homepage.css';
-import Logo from '../img/BlindifyLogo.png';
+// import Logo from './img/BlindifyLogo.png';
 import Searchbar from "../Searchbar/Searchbar";
 import Playlist from "../Playlist/Playlist";
-import Game from "../Game/Game";
-import { Link } from "react-router-dom";
 
-export default class Homepage extends Component {
+export type PlaylistsState = {
+  playlist: [
+    {
+      id: number,
+      cover: string
+    }
+  ]
+}
+
+
+export default class Homepage extends React.Component<PlaylistsState>{
     state = {
-        playlists : [
-          {
-            id: 1,
-            cover: '#000000'
-          },
-          {
-            id: 2,
-            cover: '#F00000'
-          },
-          {
-            id: 3,
-            cover: '#FF0000'
-          },
-          {
-            id: 4,
-            cover: '#FFF000'
-          }
-          
-        ]
-      }
+      playlist: [
+        {
+          id: 1,
+          cover: 'black'  
+        },
+        {
+          id: 2,
+          cover: 'red'  
+        },
+        {
+          id: 3,
+          cover: 'blue'  
+        },
+        {
+          id: 4,
+          cover: 'pink'  
+        } 
+      ] 
+    }
     render() {
         return (
             <div className="Homepage">
                 <section className="section1">
-                    <img src={Logo} alt="Blindify Logo"/>
+                    {/* <img src={Logo} alt="Blindify Logo"/> */}
                     <h1>Jouez au Blindtest musical avec vos amis !</h1>
                     <h2>Jouez maintenant à Blindify et découvrez qui a la meilleure culture musicale</h2>
                     <a href="#section2" className="playButton">Jouer maintenant</a>
@@ -46,8 +53,9 @@ export default class Homepage extends Component {
                     <p>Playlists</p>
                 </section>
                 <section className="section3">
-                    {/* @ts-ignore */}
-                    <Playlist playlists={this.state.playlists}/>
+                  
+                    
+                    <Playlist playlists={this.state.playlist}/>
                 </section>
             </div>
         )
