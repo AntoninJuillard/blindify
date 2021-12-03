@@ -5,42 +5,37 @@ import Playlist from "../Playlist/Playlist";
 import icon from '../../img/BlindifyLogo.png'
 
 export type PlaylistsState = {
-  playlist:
+  playlist: [
     {
       id: number,
-      cover: string,
-      name: string
-    }[]
+      cover: string
+    }
+  ]
 }
 
 
-export default class Homepage extends React.Component<{}, PlaylistsState>{
+export default class Homepage extends React.Component<PlaylistsState>{
     state = {
       playlist: [
         {
           id: 1,
-          cover: 'black',
-          name: 'playlist1'
+          cover: 'black'  
         },
         {
           id: 2,
-          cover: 'red',
-          name: 'playlist2'
+          cover: 'red'  
         },
         {
           id: 3,
-          cover: 'blue',
-          name: 'playlist3'
+          cover: 'blue'  
         },
         {
           id: 4,
-          cover: 'pink',
-          name: 'playlist4'
+          cover: 'pink'  
         },
         {
           id: 5,
-          cover: 'purple',
-          name: 'playlist5'
+          cover: 'purple'
         }
       ] 
     }
