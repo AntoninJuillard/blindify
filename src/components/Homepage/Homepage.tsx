@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import './Homepage.css';
-// import Logo from './img/BlindifyLogo.png';
 import Searchbar from "../Searchbar/Searchbar";
 import Playlist from "../Playlist/Playlist";
+import icon from '../../img/BlindifyLogo.png'
 
 export type PlaylistsState = {
   playlist: [
@@ -32,14 +32,18 @@ export default class Homepage extends React.Component<PlaylistsState>{
         {
           id: 4,
           cover: 'pink'  
-        } 
+        },
+        {
+          id: 5,
+          cover: 'purple'
+        }
       ] 
     }
     render() {
         return (
             <div className="Homepage">
                 <section className="section1">
-                    {/* <img src={Logo} alt="Blindify Logo"/> */}
+                    <img src={ icon } alt="Blindify Logo"/>
                     <h1>Jouez au Blindtest musical avec vos amis !</h1>
                     <h2>Jouez maintenant à Blindify et découvrez qui a la meilleure culture musicale</h2>
                     <a href="#section2" className="playButton">Jouer maintenant</a>
