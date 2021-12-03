@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Game.css';
+import icon from '../../img/BlindifyLogo.png'
 
 export default class Game extends Component {
     render() {
         return (
             <div>
-                <img src={Logo} alt="Blindify Logo"/>
+                <img src={icon} alt="Blindify Logo"/>
                 <div className='background'>    
                     <div className= "gameContainer">
                         <div className = "playlistName">
