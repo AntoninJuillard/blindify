@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 
 
-
 class App extends Component {
 //  function App() {
 
@@ -17,8 +16,9 @@ class App extends Component {
       <div className="App">
         <Router>
           <Routes>
-            {/* @ts-ignore Homepage cassé quand ajoute un state dans homepage.tsx*/ }
+            
             <Route path="/" element={<Homepage/>}/>
+            {/* @ts-ignore Homepage cassé quand ajoute un state dans homepage.tsx*/ }
             <Route path="game" element={<Game/>}/>
           </Routes>
         </Router>
