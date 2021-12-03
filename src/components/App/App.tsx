@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import './App.css';
 import Homepage from "../Homepage/Homepage";
 import Game from "../Game/Game";
-import { BrowserRouter as Router, Routes, Route, Link, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 
 
@@ -17,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Routes>
+            {/* @ts-ignore Homepage cassé quand ajoute un state dans homepage.tsx*/ }
             <Route path="/" element={<Homepage/>}/>
             <Route path="game" element={<Game/>}/>
           </Routes>
