@@ -3,6 +3,8 @@ import './Homepage.css';
 import Searchbar from "../Searchbar/Searchbar";
 import Playlist from "../Playlist/Playlist";
 import icon from '../../img/BlindifyLogo.png'
+import { useState } from 'react'
+import Game from '../Game/Game'
 
 export type PlaylistsState = {
   playlist:
@@ -10,8 +12,15 @@ export type PlaylistsState = {
       id: number,
       cover: string,
       name: string
-    }[]
+    }[],
+  playlistSelected: 
+    {
+      id: number,
+      name: string
+    }
 }
+
+
 
 
 export default class Homepage extends React.Component<{}, PlaylistsState>{
@@ -42,11 +51,45 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
           cover: 'purple',
           name: 'playlist5'
         }
-      ] 
+      ],
+      playlistSelected: 
+        {
+          id: 0,
+          name: ''
+          
+        }
     }
+
+    
+
+    // handleSelect = (playlistClicked: { id: number; }) => {
+    //   const playlistSelect = [this.state.playlistSelected];
+    //   playlistSelect.push(playlistClicked);
+    //   this.setState({playlistSelected : playlistSelect })
+    // }
+
+    handleSelect = (playlistClickedId:number, playlistClickedName:string ) => {
+      let playlistSelected = { id:playlistClickedId, name: playlistClickedName}
+      let playlist = this.state.playlist
+      let playlistNewState = {playlist, playlistSelected}
+
+
+      this.setState(playlistNewState) 
+    }
+    //sdilj={this.handleSelect}
+  
+    // SI id = 0 render la homepage 
+    
+    
+
+
     render() {
-        return (
+        
+          if(this.state.playlistSelected.id === 0 ){
+          return (
+          
             <div className="Homepage">
+              
                 <section className="section1">
                     <img src={ icon } alt="Blindify Logo"/>
                     <h1>Jouez au Blindtest musical avec vos amis !</h1>
@@ -61,12 +104,25 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
                     <input type="text" placeholder="recherchez la catégorie que vous voulez..." className="searchbar"/>
                     <p>Playlists</p>
                 </section>
-                <section className="section3">
+                <section className="section3" >
                   
                     
-                    <Playlist playlists={this.state.playlist}/>
+                    <Playlist playlists={this.state.playlist} handleSelect={this.handleSelect} />
                 </section>
             </div>
         )
+        }
+
+        
+        else {
+           return (
+             <div>
+               <Game playlist={this.state.playlistSelected}/>
+             </div>
+           )
+         }
+        
     }
+    // SI id > 0 render le composant game
 }
+
