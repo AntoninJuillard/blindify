@@ -5,7 +5,8 @@ import icon from '../../img/BlindifyLogo.png'
 export type playlistProps = {
     playlist: {
         id: number, 
-        name: string
+        name: string,
+        tracks: {artist:string, trackname:string}[]
     }
 }
 
@@ -13,6 +14,7 @@ export default class Game extends Component <playlistProps>{
     render() {
         return (
             <div>
+                
                 <img src={icon} alt="Blindify Logo"/>
                 <div className='background'>    
                     <div className= "gameContainer">
@@ -28,7 +30,7 @@ export default class Game extends Component <playlistProps>{
                     <div className = "equipeContainer">
                         <div className = "equipe1" >
                                 <h3 className ="fontEquipe">Equipe 1</h3>
-                                <h4>1</h4>
+                                <h4>0</h4>
                         </div>
                         <div className = "responseContainer fontName">
                                 <div className = "response1" >
@@ -46,7 +48,7 @@ export default class Game extends Component <playlistProps>{
                         </div>
                             <div className = "equipe2" >
                                 <h3 className="fontEquipe">Equipe 2</h3>
-                                <h4>1</h4>
+                                <h4>0</h4>
                             </div> 
                     </div>   
                 </div> 

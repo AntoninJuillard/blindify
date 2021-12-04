@@ -6,7 +6,8 @@ export type playlistProps = {
     playlists: Array<{
         id: number,
         cover: string,
-        name: string
+        name: string, 
+        tracks: {artist:string, trackname:string}[]
     }>
     handleSelect: Function
 }
@@ -20,7 +21,7 @@ export default class Playlist extends Component <playlistProps, {}> {
                 
                 this.props.playlists.map((pres) =>
                     <div className="playlist" style={{background: pres.cover}} key={pres.id}>
-                        <Link to="/" onClick= {() => this.props.handleSelect(pres.id, pres.name)} >
+                        <Link to="/" onClick= {() => this.props.handleSelect(pres.id, pres.name, pres.tracks)} >
                             <div className="playlistHover">               
                                 <div className="triangle"></div>
                                 <p>Lancer le blindtest</p>                  
