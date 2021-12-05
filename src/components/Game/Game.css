@@ -88,31 +88,6 @@ h2{
 
 
 
-.teamChoice{
-    z-index: 10;
-    width: 40vw;
-    height: 55vh;
-    background: blue;
-    border-radius: 50px;
-    position: fixed;
-    left: 30vw;
-    top: 22.5vh;
-    display: none;
-    justify-content: space-around;
-    align-items: center;
-    
-    font-size: 40px;
-}
-
-.teamChoice p{
-    position: absolute;
-    top: 6vh;
-}
-
-.teamChoice div:hover{
-    color: red;
-    cursor: pointer;
-}
 
 
 
