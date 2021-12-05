@@ -10,28 +10,34 @@ export type playlistProps = {
     }
 }
 
-export type playlistState = {
-    tracklistCopy1: {artist:string, trackname:string}[],
-    tracklistCopy2: {artist:string, trackname:string}[],
-    tourTracks: {
-        track: {
-            artist: string;
-            trackname: string;
-        }[];
-        value: boolean;
-    }[],
-    trueTrack: {
-        track: {
-            artist: string;
-            trackname: string;
-        }[];
-        value: boolean;
-    }
-
-
+export type trackChoices = {
+    track1: string, 
+    track2: string, 
+    track3: string, 
+    track4: string
 }
+// export type playlistState = {
+//     tracklistCopy1: {artist:string, trackname:string}[],
+    // tracklistCopy2: {artist:string, trackname:string}[],
+    // tourTracks: {
+    //     track: {
+    //         artist: string;
+    //         trackname: string;
+    //     }[];
+    //     value: boolean;
+    // }[],
+    // trueTrack: {
+    //     track: {
+    //         artist: string;
+    //         trackname: string;
+    //     }[];
+    //     value: boolean;
+    // }
 
-export default class Game extends Component <playlistProps, {}>{
+
+// }
+
+export default class Game extends Component <playlistProps, trackChoices>{
 // , tracklistCopy2:{artist:string, trackname:string}[], tourTracks:{track: {artist: string; trackname: string;}[];value: boolean;}[], trueTrack:{track: {artist: string;trackname: string;}[];value: boolean;})
     // updateState = (tracklistCopy1:{artist:string, trackname:string}[]) => {
     //     // this.state.tracklistCopy1
@@ -46,8 +52,8 @@ export default class Game extends Component <playlistProps, {}>{
         
         
     // }
-    scoreTeam1:number = 0
-    scoreTeam2:number = 0
+    // // scoreTeam1:number = 0
+    // scoreTeam2:number = 0
 
     createTourTrackList = (trackList:{artist:string, trackname:string}[]) => {
         const tracklistCopy = [...trackList]
@@ -79,47 +85,51 @@ export default class Game extends Component <playlistProps, {}>{
         
     }
 
-    updateScore = (team:number) => {
-        if(team===1){
-            this.scoreTeam1++
-            let score:any = document.querySelector('.equipe1 h4')
-            console.log(score)
-            score.textContent = this.scoreTeam1
-        }
-        else if(team ===2){
-            this.scoreTeam2++
-            let score:any = document.querySelector('.equipe2 h4')
-            console.log(score)
-            score.textContent = this.scoreTeam2
-        }
-        let teamChoice:any = document.querySelector('.teamChoice')
-        teamChoice.style.display= 'none'
-        this.copyTrackList(this.props.playlist.tracks) 
-        let buttons:any = document.querySelectorAll('.responseContainer div')
-        buttons[0].style.background = '#ffffff'
-        buttons[1].style.background = '#ffffff'
-        buttons[2].style.background = '#ffffff'
-        buttons[3].style.background = '#ffffff'
-        console.log(this.copyTrackList(this.props.playlist.tracks))
+    // updateScore = (team:number) => {
+    //     if(team===1){
+    //         this.scoreTeam1++
+    //         let score:any = document.querySelector('.equipe1 h4')
+    //         console.log(score)
+    //         score.textContent = this.scoreTeam1
+    //     }
+    //     else if(team ===2){
+    //         this.scoreTeam2++
+    //         let score:any = document.querySelector('.equipe2 h4')
+    //         console.log(score)
+    //         score.textContent = this.scoreTeam2
+    //     }
+    //     let teamChoice:any = document.querySelector('.teamChoice')
+    //     teamChoice.style.display= 'none'
+    //     this.copyTrackList(this.props.playlist.tracks) 
+    //     let buttons:any = document.querySelectorAll('.responseContainer div')
+    //     buttons[0].style.background = '#ffffff'
+    //     buttons[1].style.background = '#ffffff'
+    //     buttons[2].style.background = '#ffffff'
+    //     buttons[3].style.background = '#ffffff'
+    //     console.log(this.copyTrackList(this.props.playlist.tracks))
+
         
-    }
 
-    isRightSong = (value:boolean, id:number) => {
-        if( value === true){
-            
-            let button:any = document.querySelector('.response'+id)
-            let teamChoice:any = document.querySelector('.teamChoice')
-            button.style.background = 'green'
-            button.textContent = 'bonne reponse'  
-            teamChoice.style.display= 'flex'     
 
-        } else {
+        
+    // }
+
+    // isRightSong = (value:boolean, id:number) => {
+    //     if( value === true){
             
-            let button:any = document.querySelector('.response'+id)
-            button.style.background = 'red'
-            button.textContent = 'mauvaise reponse'
-        }
-    }
+    //         let button:any = document.querySelector('.response'+id)
+    //         let teamChoice:any = document.querySelector('.teamChoice')
+    //         button.style.background = 'green'
+    //         button.textContent = 'bonne reponse'  
+    //         teamChoice.style.display= 'flex'     
+
+    //     } else {
+            
+    //         let button:any = document.querySelector('.response'+id)
+    //         button.style.background = 'red'
+    //         button.textContent = 'mauvaise reponse'
+    //     }
+    // }
     
     copyTrackList = (tracklistToCopy: {artist:string, trackname:string}[]) => {
         // faire une copie de la tracklist dans les props
@@ -147,36 +157,54 @@ export default class Game extends Component <playlistProps, {}>{
         let track3 = tourTracklist.tourTracks[2].track[0].artist + ' - ' + tourTracklist.tourTracks[2].track[0].trackname
         let track4 = tourTracklist.tourTracks[3].track[0].artist + ' - ' + tourTracklist.tourTracks[3].track[0].trackname
         
+
         // tourTracklist.tourTracks[0].track[0].artist + ' - ' + tourTracklist.tourTracks[0].track[0].trackname
 
 //  onClick={ () => this.isRightSong(tourTracklist.tourTracks[0].value, 1)}
 // onClick={ () => this.isRightSong(tourTracklist.tourTracks[1].value, 2)}
 // onClick={ () => this.isRightSong(tourTracklist.tourTracks[2].value, 3)}
 // onClick={ () => this.isRightSong(tourTracklist.tourTracks[3].value, 4)}
+    
+        
 
-        const trackDisplay1 = document.querySelector('.responseDisplay1')
-        console.log(track1)
-
-        return [track1, track2, track3, track4]
+        return <div className = "responseContainer fontName">
+            <div className = "response1">
+                <p className="responseDisplay1">{track1}</p>
+            </div>
+            <div className = "response2">
+                <p className="responseDisplay2">{track2}</p>
+            </div>
+            <div className = "response3">
+                <p className="responseDisplay3">{track3}</p>              
+            </div>
+            <div className = "response4">
+                <p className="responseDisplay4">{track4}</p>
+            </div>                      
+        </div>
                
     }
 
-    tracksToDisplay = this.copyTrackList(this.props.playlist.tracks)
+    changeTrackChoices = (track1:string, track2:string, track3:string, track4:string) => {
+        this.setState({track1, track2, track3, track4})
+        console.log(this.state)
+    }
+
+    // tracksToDisplay = this.copyTrackList(this.props.playlist.tracks)
 
 
 
    
 
     render() {
-        // 
-        // 
+        // onClick={ () => this.updateScore(1) }
+        // onClick={ () => this.updateScore(2) }
         return (
             
             <div>
                 <div className='teamChoice'>
                     <p>Qui a répondu ?</p>
-                    <div onClick={ () => this.updateScore(1) }>Equipe 1 : </div>
-                    <div onClick={ () => this.updateScore(2) }>Equipe 2 : </div>
+                    <div>Equipe 1 : </div>
+                    <div>Equipe 2 : </div>
                 </div>
                 <img src={icon} alt="Blindify Logo"/>
                 <div className='background'>    
@@ -185,36 +213,23 @@ export default class Game extends Component <playlistProps, {}>{
                             <h2 className ="namePlaylist">{this.props.playlist.name}</h2>
                         </div>
                         <div className= "question">
-                            <h2 className="questionFont" onClick={ () => { this.tracksToDisplay = this.copyTrackList(this.props.playlist.tracks) }}>Quel est le nom de cette musique ?</h2>
+                            <h2 className="questionFont"  onClick={() => (this.changeTrackChoices('er', 'rerere', 'zilfjsddk:', 'fiosjf'))}>Quel est le nom de cette musique ?</h2>
                         </div>
                         <div className= "numberQuestion">
                             <h2 className="fontNumber">1/15</h2>
                         </div>     
                     <div className = "equipeContainer">
                         <div className = "equipe1" >
-                                <h3 className ="fontEquipe">Equipe 1</h3>
-                                <h4>0</h4>
+                            <h3 className ="fontEquipe">Equipe 1</h3>
+                            <h4>0</h4>
                         </div>
                        
-                        <div className = "responseContainer fontName">
-                            <div className = "response1">
-                                <p className="responseDisplay1">{this.tracksToDisplay[0]}</p>
-                            </div>
-                            <div className = "response2">
-                                <p className="responseDisplay2">{this.tracksToDisplay[1]}</p>
-                            </div>
-                            <div className = "response3">
-                                <p className="responseDisplay3">{this.tracksToDisplay[2]}</p>              
-                            </div>
-                            <div className = "response4">
-                                <p className="responseDisplay4">{this.tracksToDisplay[3]}</p>
-                            </div>                      
-                        </div>
+                        { this.copyTrackList(this.props.playlist.tracks) }
                         
-                            <div className = "equipe2" >
-                                <h3 className="fontEquipe">Equipe 2</h3>
-                                <h4>0</h4>
-                            </div> 
+                        <div className = "equipe2" >
+                            <h3 className="fontEquipe">Equipe 2</h3>
+                            <h4>0</h4>
+                        </div> 
                     </div>   
                 </div> 
                 </div>
