@@ -58,7 +58,7 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
             {artist: 'patrick7', trackname: 'titre7'},
             {artist: 'patrick8', trackname: 'titre8'},
             {artist: 'patrick9', trackname: 'titre9'},
-            {artist: 'patrick10', trackname: 'titre10'}
+            {artist: 'patrick10', trackname: 'titre10'},
           ]
         },
         {

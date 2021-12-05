@@ -76,8 +76,9 @@ export default class Round extends Component <roundProps, roundState> {
         if(id===this.state.trueTrack)
         {
             
-            this.handleRandomTracks()
+            
             this.handleChooseTeamDisplay()
+            this.handleRandomTracks()
 
         }
     }
