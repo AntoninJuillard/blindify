@@ -12,6 +12,8 @@ export type playlistProps = {
 
 export default class Game extends Component <playlistProps>{
 
+    scoreTeam1:number = 0
+    scoreTeam2:number = 0
 
     createTourTrackList = (trackList:{artist:string, trackname:string}[]) => {
         const tracklistCopy = [...trackList]
@@ -41,13 +43,39 @@ export default class Game extends Component <playlistProps>{
         
     }
 
-    isRightSong = (value:boolean) => {
-        if( value == true){
-            console.log('bonne rep') 
-            return 'style={{background: `green`}}'         
+    updateScore = (team:number) => {
+        if(team===1){
+            this.scoreTeam1++
+            let score:any = document.querySelector('.equipe1 h4')
+            console.log(score)
+            score.textContent = this.scoreTeam1
+        }
+        else if(team ===2){
+            this.scoreTeam2++
+            let score:any = document.querySelector('.equipe2 h4')
+            console.log(score)
+            score.textContent = this.scoreTeam2
+        }
+        let teamChoice:any = document.querySelector('.teamChoice')
+        teamChoice.style.display= 'none'
+        this.copyTrackList(this.props.playlist.tracks) 
+        
+    }
+
+    isRightSong = (value:boolean, id:number) => {
+        if( value === true){
+            
+            let button:any = document.querySelector('.response'+id)
+            let teamChoice:any = document.querySelector('.teamChoice')
+            button.style.background = 'green'
+            button.textContent = 'bonne reponse'  
+            teamChoice.style.display= 'flex'     
+
         } else {
-            console.log('maaauvaise rep')
-            return 'style={{background: `red`}}'   
+            
+            let button:any = document.querySelector('.response'+id)
+            button.style.background = 'red'
+            button.textContent = 'mauvaise reponse'
         }
     }
     
@@ -73,16 +101,16 @@ export default class Game extends Component <playlistProps>{
         // tourTracklist.tourTracks[0].track[0].artist + ' - ' + tourTracklist.tourTracks[0].track[0].trackname
         
         return <div className = "responseContainer fontName">
-            <div className = "response1" onClick={ () => this.isRightSong(tourTracklist.tourTracks[0].value)} >
+            <div className = "response1" onClick={ () => this.isRightSong(tourTracklist.tourTracks[0].value, 1)} >
                 <p>{tourTracklist.tourTracks[0].track[0].artist + ' - ' + tourTracklist.tourTracks[0].track[0].trackname}</p>
             </div>
-            <div className = "response2" onClick={ () => this.isRightSong(tourTracklist.tourTracks[1].value)}>
+            <div className = "response2" onClick={ () => this.isRightSong(tourTracklist.tourTracks[1].value, 2)}>
                 <p>{tourTracklist.tourTracks[1].track[0].artist + ' - ' + tourTracklist.tourTracks[1].track[0].trackname}</p>
             </div>
-            <div className = "response3" onClick={ () => this.isRightSong(tourTracklist.tourTracks[2].value)}>
+            <div className = "response3" onClick={ () => this.isRightSong(tourTracklist.tourTracks[2].value, 3)}>
                 <p>{tourTracklist.tourTracks[2].track[0].artist + ' - ' + tourTracklist.tourTracks[2].track[0].trackname}</p>              
             </div>
-            <div className = "response4" onClick={ () => this.isRightSong(tourTracklist.tourTracks[3].value)}>
+            <div className = "response4" onClick={ () => this.isRightSong(tourTracklist.tourTracks[3].value, 4)}>
                 <p>{tourTracklist.tourTracks[3].track[0].artist + ' - ' + tourTracklist.tourTracks[3].track[0].trackname}</p>
             </div>
            
@@ -100,7 +128,11 @@ export default class Game extends Component <playlistProps>{
         return (
             
             <div>
-                
+                <div className='teamChoice'>
+                    <p>Qui a répondu ?</p>
+                    <div onClick={ () => this.updateScore(1) }>Equipe 1 : </div>
+                    <div onClick={ () => this.updateScore(2) }>Equipe 2 : </div>
+                </div>
                 <img src={icon} alt="Blindify Logo"/>
                 <div className='background'>    
                     <div className= "gameContainer">
