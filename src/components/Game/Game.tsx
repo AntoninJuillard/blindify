@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './Game.css';
 import icon from '../../img/BlindifyLogo.png'
+import Round from './Round/Round';
 
 export type playlistProps = {
     playlist: {
@@ -10,229 +11,118 @@ export type playlistProps = {
     }
 }
 
-export type trackChoices = {
-    track1: string, 
-    track2: string, 
-    track3: string, 
-    track4: string
+export type gameState = {
+    tracks : string[],
+    tracksRound : string[],
+    score1 : number, 
+    score2 : number
 }
-// export type playlistState = {
-//     tracklistCopy1: {artist:string, trackname:string}[],
-    // tracklistCopy2: {artist:string, trackname:string}[],
-    // tourTracks: {
-    //     track: {
-    //         artist: string;
-    //         trackname: string;
-    //     }[];
-    //     value: boolean;
-    // }[],
-    // trueTrack: {
-    //     track: {
-    //         artist: string;
-    //         trackname: string;
-    //     }[];
-    //     value: boolean;
-    // }
 
 
-// }
 
-export default class Game extends Component <playlistProps, trackChoices>{
-// , tracklistCopy2:{artist:string, trackname:string}[], tourTracks:{track: {artist: string; trackname: string;}[];value: boolean;}[], trueTrack:{track: {artist: string;trackname: string;}[];value: boolean;})
-    // updateState = (tracklistCopy1:{artist:string, trackname:string}[]) => {
-    //     // this.state.tracklistCopy1
-    //     // this.state.tracklistCopy2
-    //     // this.state.tourTracks
-    //     // this.state.trueTrack
-
-    //     // tracklistCopy2, tourTracks, trueTrack
-    //     let newState = {tracklistCopy1}
-    //     console.log('updatestate')
-    //     this.setState(newState)
-        
-        
-    // }
-    // // scoreTeam1:number = 0
-    // scoreTeam2:number = 0
-
-    createTourTrackList = (trackList:{artist:string, trackname:string}[]) => {
-        const tracklistCopy = [...trackList]
-
-        let tourTracks = [
-            { 
-                track: tracklistCopy.splice(Math.floor(Math.random()*tracklistCopy.length),1), 
-                value:false
-            },
-            {
-                track: tracklistCopy.splice(Math.floor(Math.random()*tracklistCopy.length),1), 
-                value:false
-            },
-            {
-                track: tracklistCopy.splice(Math.floor(Math.random()*tracklistCopy.length),1), 
-                value:false
-            },
-            {
-                track: tracklistCopy.splice(Math.floor(Math.random()*tracklistCopy.length),1), 
-                value:false
-            }
-        ]
-        let trueTrack = tourTracks[Math.floor(Math.random()*tourTracks.length)]
-        trueTrack.value = true
-        // , tracklistCopy, tourTracks, trueTrack
-        
-                
-        return { trueTrack:trueTrack, tourTracks:tourTracks}
-        
+export default class Game extends Component <playlistProps, gameState>{
+    
+    //handleTracklist : essayer de pouvoir changer le state et que les changements s'affiche dans le return 
+    state = {
+        tracks: ['tracksskssks ', ' hk;h', 'rer'],
+        tracksRound: [' bfdklj', ' ', ' ', ' '],
+        score1: 0,
+        score2: 0
     }
 
-    // updateScore = (team:number) => {
-    //     if(team===1){
-    //         this.scoreTeam1++
-    //         let score:any = document.querySelector('.equipe1 h4')
-    //         console.log(score)
-    //         score.textContent = this.scoreTeam1
-    //     }
-    //     else if(team ===2){
-    //         this.scoreTeam2++
-    //         let score:any = document.querySelector('.equipe2 h4')
-    //         console.log(score)
-    //         score.textContent = this.scoreTeam2
-    //     }
-    //     let teamChoice:any = document.querySelector('.teamChoice')
-    //     teamChoice.style.display= 'none'
-    //     this.copyTrackList(this.props.playlist.tracks) 
-    //     let buttons:any = document.querySelectorAll('.responseContainer div')
-    //     buttons[0].style.background = '#ffffff'
-    //     buttons[1].style.background = '#ffffff'
-    //     buttons[2].style.background = '#ffffff'
-    //     buttons[3].style.background = '#ffffff'
-    //     console.log(this.copyTrackList(this.props.playlist.tracks))
-
-        
-
-
-        
-    // }
-
-    // isRightSong = (value:boolean, id:number) => {
-    //     if( value === true){
-            
-    //         let button:any = document.querySelector('.response'+id)
-    //         let teamChoice:any = document.querySelector('.teamChoice')
-    //         button.style.background = 'green'
-    //         button.textContent = 'bonne reponse'  
-    //         teamChoice.style.display= 'flex'     
-
-    //     } else {
-            
-    //         let button:any = document.querySelector('.response'+id)
-    //         button.style.background = 'red'
-    //         button.textContent = 'mauvaise reponse'
-    //     }
-    // }
-    
-    copyTrackList = (tracklistToCopy: {artist:string, trackname:string}[]) => {
-        // faire une copie de la tracklist dans les props
-        let trackList = [...tracklistToCopy]
-        // créer une liste de 4 tracks avec un element booleen en plus dont 1 TRUE
-        let tourTracklist = this.createTourTrackList(trackList)
-
-        // pour avoir l'artiste de la chanson en true = tourTracklist.trueTrack.track[0].artist pour track .trackname à la fin
-
-        // pour avoir l'artiste de toutes les chansons de la tracklist du tour : tourTracklist.tourTracks[0].track[0].artist
-
-        // si la track a la value true et que elle est presente dans le tableau trackList alors la supprimer du tableau tracklist
-        if(trackList.includes(tourTracklist.trueTrack.track[0])){
-            for (let i = 0; i < trackList.length; i++) {
-                if(trackList[i].artist === tourTracklist.trueTrack.track[0].artist && trackList[i].trackname === tourTracklist.trueTrack.track[0].trackname){
-                    delete trackList[i]
-                }
-            }
-           
+    // transformer la tracklist des props en string artist - name et stocker ca dans le state tracks
+    handleTracks = () => {
+        let rawTrackList = this.props.playlist.tracks
+        let trackList:string[] = []
+        for(let i=0; i < rawTrackList.length; i++){
+            trackList[i] = rawTrackList[i].artist + ' - ' + rawTrackList[i].trackname
         }
-        
-        
-        let track1 = tourTracklist.tourTracks[0].track[0].artist + ' - ' + tourTracklist.tourTracks[0].track[0].trackname
-        let track2 = tourTracklist.tourTracks[1].track[0].artist + ' - ' + tourTracklist.tourTracks[1].track[0].trackname
-        let track3 = tourTracklist.tourTracks[2].track[0].artist + ' - ' + tourTracklist.tourTracks[2].track[0].trackname
-        let track4 = tourTracklist.tourTracks[3].track[0].artist + ' - ' + tourTracklist.tourTracks[3].track[0].trackname
-        
 
-        // tourTracklist.tourTracks[0].track[0].artist + ' - ' + tourTracklist.tourTracks[0].track[0].trackname
+        let state = {
+            tracks: trackList,
+            tracksRound: this.state.tracksRound,
+            score1: this.state.score1,
+            score2: this.state.score2,
+        }
+        this.setState(state)
 
-//  onClick={ () => this.isRightSong(tourTracklist.tourTracks[0].value, 1)}
-// onClick={ () => this.isRightSong(tourTracklist.tourTracks[1].value, 2)}
-// onClick={ () => this.isRightSong(tourTracklist.tourTracks[2].value, 3)}
-// onClick={ () => this.isRightSong(tourTracklist.tourTracks[3].value, 4)}
+        console.log(this.state.tracks)
+    }
+
+
+
+    // attribuer le score 
+    handleScore = (team:number) => {
+        if(team=== 1){
+            let i= this.state.score1
+
+            let state = {
+                tracks: this.state.tracks,
+                tracksRound: this.state.tracksRound,
+                score1: i + 1,
+                score2: this.state.score2          
+            }
+            this.setState(state)
+        } else if(team=== 2){
+            let i= this.state.score2
+
+            let state = {
+                tracks: this.state.tracks,
+                tracksRound: this.state.tracksRound,
+                score1: this.state.score1,
+                score2: i + 1        
+            }
+            this.setState(state)
+        }        
+    }
+
+    // supprimer la track envoyé
+    handleDeleteTrack = (track:string) => {
+        let tracks = this.state.tracks
+        for(let i=0; i < tracks.length; i++){
+            if(tracks[i]===track){
+                tracks.splice(i)
+            }
+        }
+        let state = {
+            tracks: tracks,
+            tracksRound: this.state.tracksRound,
+            score1: this.state.score1,
+            score2: this.state.score2       
+        }
+        this.setState(state)
+    }
+    // definir les tracks du round 
+    handleTracksRound = (track1:string, track2:string, track3:string, track4:string) => {
+        let state = {
+            tracks: this.state.tracks,
+            tracksRound: [track1, track2, track3, track4],
+            score1: this.state.score1,
+            score2: this.state.score2  
+        }
+        this.setState(state)
+    }
+
     
-        
-
-        return <div className = "responseContainer fontName">
-            <div className = "response1">
-                <p className="responseDisplay1">{track1}</p>
-            </div>
-            <div className = "response2">
-                <p className="responseDisplay2">{track2}</p>
-            </div>
-            <div className = "response3">
-                <p className="responseDisplay3">{track3}</p>              
-            </div>
-            <div className = "response4">
-                <p className="responseDisplay4">{track4}</p>
-            </div>                      
-        </div>
-               
-    }
-
-    changeTrackChoices = (track1:string, track2:string, track3:string, track4:string) => {
-        this.setState({track1, track2, track3, track4})
-        console.log(this.state)
-    }
-
-    // tracksToDisplay = this.copyTrackList(this.props.playlist.tracks)
-
-
-
-   
 
     render() {
-        // onClick={ () => this.updateScore(1) }
-        // onClick={ () => this.updateScore(2) }
         return (
-            
-            <div>
-                <div className='teamChoice'>
-                    <p>Qui a répondu ?</p>
-                    <div>Equipe 1 : </div>
-                    <div>Equipe 2 : </div>
-                </div>
+            <div className='container'>       
                 <img src={icon} alt="Blindify Logo"/>
-                <div className='background'>    
-                    <div className= "gameContainer">
-                        <div className = "playlistName">
-                            <h2 className ="namePlaylist">{this.props.playlist.name}</h2>
-                        </div>
-                        <div className= "question">
-                            <h2 className="questionFont"  onClick={() => (this.changeTrackChoices('er', 'rerere', 'zilfjsddk:', 'fiosjf'))}>Quel est le nom de cette musique ?</h2>
-                        </div>
-                        <div className= "numberQuestion">
-                            <h2 className="fontNumber">1/15</h2>
-                        </div>     
-                    <div className = "equipeContainer">
-                        <div className = "equipe1" >
-                            <h3 className ="fontEquipe">Equipe 1</h3>
-                            <h4>0</h4>
-                        </div>
-                       
-                        { this.copyTrackList(this.props.playlist.tracks) }
-                        
-                        <div className = "equipe2" >
-                            <h3 className="fontEquipe">Equipe 2</h3>
-                            <h4>0</h4>
-                        </div> 
-                    </div>   
-                </div> 
-                </div>
+                <div className="gameContainer">
+                    <div className='scoreDisplay'>
+                        <p className="scoreDisplayTitle">Equipe 1</p>                      
+                        <p>{this.state.score1} </p>
+                    </div>
+                    <h2 className="playlistName">{this.props.playlist.name}</h2>
+                    <div className="title" onClick={() => this.handleTracks()}>Quel est le nom de cette musique ?</div>
+                    <div className="roundDisplay">/15</div>
+                    <Round  />
+                    <div className='scoreDisplay scoreDisplayRight'>
+                        <p className="scoreDisplayTitle">Equipe 2</p>  
+                        <p>{this.state.score2}</p>
+                    </div>       
+                </div>                       
             </div>
         )
     }

@@ -1,11 +1,92 @@
-h4{
-    margin: auto;
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+img{
+    position: absolute;
+    height: 57px;
+    width: 140px;
+    top: 20px;
+    left: 20px;
+    
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background:linear-gradient(rgba(254,126,94), rgba(255,240,101, 0.5));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameContainer{
+    height: 547px;
+    width:  1386px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+
+h2{
+    font-size: 24px;
+    width: 1300px;
+}
+
+.title{
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+    font-size: 30px;
+    border-radius: 8px;
+    border: 0.2px solid rgba(254,126,94);
+    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
+    font-weight: 700;
+}
+
+.roundDisplay{
+    font-size: 30px;
+    color: #FD8762;
+    margin-top: 20px;
+}
+
+.scoreDisplay{
+    position: absolute;
+    top: 192px;
+    left: 63px;
+    height: 345px;
+    width:  220px;
+    background: #F1E9A7;
+    border-radius: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
     font-size: 144px;
 }
 
-p{
-    margin: auto;
+.scoreDisplayRight{
+    position: absolute;
+    top: 192px;
+    left: 1142px;
+    background: #FD8762;
 }
+
+.scoreDisplayTitle{
+    color: #000;    
+    font-size: 24px ;
+    font-weight: 700;
+}
+
+.scoreDisplay p{
+    margin: 0;
+    margin-top: 30px;
+}
+
+
+
+
 
 .teamChoice{
     z-index: 10;
@@ -34,118 +115,6 @@ p{
 }
 
 
-.background{
-    height: 100vh;
-    width: 100vw;
-    background:linear-gradient(rgba(254,126,94), rgba(255,240,101, 0.5));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-img{
-    height: 57px;
-    width: 140px;
-    margin-top: 20px;
-    margin-left: 20px;
-    position: absolute;
-}
-
-.gameContainer{
-   height: 547px;
-   width:  1386px;
-   background: white;
-   border-radius: 12px;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-}
-
-.playlistName{
-    width: 1300px;
-    font-size:24px;
-
-}
-
-.question{
-    width:  1386px;
-    display: flex;
-    justify-content: center;
-}
-
-.equipeContainer{
-   display:flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 1150px;
-}
-
-.equipe1{
-    height: 345px;
-    width:  220px;
-    background: #F1E9A7;
-    border-radius: 20px;
-}
-
-.equipe2{
-    height: 345px;
-    width:  220px;
-    background: #FD8762;
-    border-radius: 20px;
-}
-
-.numberQuestion{
-    position: absolute;
-    font-size: 30px;
-    color: #FD8762;
-    margin-top: 120px;
-}
 
 
-.questionFont{
-    margin: 0;
-    padding: 10px 20px 10px 20px;
-    font-size: 30px;
-    border-radius: 8px;
-    border: 0.2px solid rgba(254,126,94);
-    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
-}
 
-.namePlaylist{
-    font-size: 24px;
-}
-
-.fontNumber{
-    font-size: 30px;
-}
-.fontEquipe{
-    font-size: 24px;
-}
-
-.fontName{
-    font-size:20px;
-}
-
-.responseContainer{
-    width: 545px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: space-between;
-}
-
-.equipe1, .equipe2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.response1, .response2, .response3, .response4{
-    width: 250px;
-    padding: 20px 5px 20px 5px;
-    border-radius: 8px;
-    border: 0.2px solid rgba(254,126,94);
-    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
-}
