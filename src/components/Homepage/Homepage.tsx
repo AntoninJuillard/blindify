@@ -44,40 +44,6 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
             {artist: 'artiste10', trackname: 'titre10'}
           ]
         },
-        {
-          id: 1,
-          cover: 'red',
-          name: 'playlist2',
-          tracks: [
-            {artist: 'patrick1', trackname: 'titre1'},
-            {artist: 'patrick2', trackname: 'titre2'},
-            {artist: 'patrick3', trackname: 'titre3'},
-            {artist: 'patrick4', trackname: 'titre4'},
-            {artist: 'patrick5', trackname: 'titre5'},
-            {artist: 'patrick6', trackname: 'titre6'},
-            {artist: 'patrick7', trackname: 'titre7'},
-            {artist: 'patrick8', trackname: 'titre8'},
-            {artist: 'patrick9', trackname: 'titre9'},
-            {artist: 'patrick10', trackname: 'titre10'},
-          ]
-        },
-        {
-          id: 1,
-          cover: 'blue',
-          name: 'playlist3',
-          tracks: [
-            {artist: 'jerome1', trackname: 'titre1'},
-            {artist: 'jerome2', trackname: 'titre2'},
-            {artist: 'jerome3', trackname: 'titre3'},
-            {artist: 'jerome4', trackname: 'titre4'},
-            {artist: 'jerome5', trackname: 'titre5'},
-            {artist: 'jerome6', trackname: 'titre6'},
-            {artist: 'jerome7', trackname: 'titre7'},
-            {artist: 'jerome8', trackname: 'titre8'},
-            {artist: 'jerome9', trackname: 'titre9'},
-            {artist: 'jerome10', trackname: 'titre10'}
-          ]
-        },
         
         
       ],
