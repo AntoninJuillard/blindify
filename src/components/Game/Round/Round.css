@@ -16,6 +16,7 @@
     border: 0.2px solid rgba(254,126,94);
     box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
     font-size:20px;
+    cursor:pointer;
 }
 
 .c{
@@ -25,7 +26,7 @@
 .teamChoice{
     z-index: 10;
     width: 60vw;
-    height: 70vh;
+    height: 67vh;
     background: #fff;
     border-radius: 50px;
     position: fixed;

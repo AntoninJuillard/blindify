@@ -67,7 +67,7 @@ export default class Round extends Component <roundProps, roundState> {
         let state = {
             tracksRound: this.state.tracksRound,
             trueTrack: this.state.trueTrack,
-            chooseTeam: <section className='teamChoice'><p>Qui a répondu ?</p><div onClick={() => {this.handleChooseTeam(1)}}>Equipe 1 </div><div onClick={() => {this.handleChooseTeam(2)}}>Equipe 2</div></section>
+            chooseTeam: <section className='teamChoice'><p>Bonne réponse ! Qui a répondu ?</p><div onClick={() => {this.handleChooseTeam(1)}}>Equipe 1 </div><div onClick={() => {this.handleChooseTeam(2)}}>Equipe 2</div></section>
         }
         this.setState(state)
     }

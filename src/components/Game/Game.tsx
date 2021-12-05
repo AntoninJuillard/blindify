@@ -112,7 +112,7 @@ export default class Game extends Component <playlistProps, gameState>{
                     </div>
                     <h2 className="playlistName">{this.props.playlist.name}</h2>
                     <div className="title" onClick={() => this.handleTracks()}>Quel est le nom de cette musique ?</div>
-                    <div className="roundDisplay">/15</div>
+                    {/* <div className="roundDisplay">/15</div> */}
                     <Round  tracks={this.state.tracks} tracksRound={this.state.tracksRound} handleTracksRound={this.handleTracksRound} handleScore={this.handleScore}/>
                     <div className='scoreDisplay scoreDisplayRight'>
                         <p className="scoreDisplayTitle">Equipe 2</p>  
