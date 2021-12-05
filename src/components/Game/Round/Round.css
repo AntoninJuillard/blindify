@@ -1,0 +1,50 @@
+.buttonsContainer{
+    width: 760px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.buttonsContainer div{
+    width: 357px;
+    padding: 20px 5px 20px 5px;
+    border-radius: 8px;
+    border: 0.2px solid rgba(254,126,94);
+    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
+    font-size:20px;
+    cursor:pointer;
+}
+
+.c{
+    background: red;
+}
+
+.teamChoice{
+    z-index: 10;
+    width: 60vw;
+    height: 67vh;
+    background: #fff;
+    border-radius: 50px;
+    position: fixed;
+    left: 20vw;
+    top: 20.5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 40px;
+    
+}
+
+.teamChoice p{
+    position: absolute;
+    top: 6vh;
+}
+
+.teamChoice div:hover{
+    color: red;
+    cursor: pointer;
+}
