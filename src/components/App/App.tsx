@@ -7,24 +7,23 @@ import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 
 
+//class App extends Component {
+function App() {
 
-class App extends Component {
-//  function App() {
 
-
- render(){
+ //render(){
     return (
       <div className="App">
+        
         <Router>
           <Routes>
-            {/* @ts-ignore Homepage cassé quand ajoute un state dans homepage.tsx*/ }
             <Route path="/" element={<Homepage/>}/>
-            <Route path="game" element={<Game/>}/>
+            {/* <Route path="game" element={<Game/>}/> */}
           </Routes>
         </Router>
       </div>
     );
  }
-}
+//}
 
 export default App;

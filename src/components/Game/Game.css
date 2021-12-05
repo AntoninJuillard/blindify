@@ -1,0 +1,151 @@
+h4{
+    margin: auto;
+    font-size: 144px;
+}
+
+p{
+    margin: auto;
+}
+
+.teamChoice{
+    z-index: 10;
+    width: 40vw;
+    height: 55vh;
+    background: blue;
+    border-radius: 50px;
+    position: fixed;
+    left: 30vw;
+    top: 22.5vh;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    
+    font-size: 40px;
+}
+
+.teamChoice p{
+    position: absolute;
+    top: 6vh;
+}
+
+.teamChoice div:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+.background{
+    height: 100vh;
+    width: 100vw;
+    background:linear-gradient(rgba(254,126,94), rgba(255,240,101, 0.5));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: 57px;
+    width: 140px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.gameContainer{
+   height: 547px;
+   width:  1386px;
+   background: white;
+   border-radius: 12px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.playlistName{
+    width: 1300px;
+    font-size:24px;
+
+}
+
+.question{
+    width:  1386px;
+    display: flex;
+    justify-content: center;
+}
+
+.equipeContainer{
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 1150px;
+}
+
+.equipe1{
+    height: 345px;
+    width:  220px;
+    background: #F1E9A7;
+    border-radius: 20px;
+}
+
+.equipe2{
+    height: 345px;
+    width:  220px;
+    background: #FD8762;
+    border-radius: 20px;
+}
+
+.numberQuestion{
+    position: absolute;
+    font-size: 30px;
+    color: #FD8762;
+    margin-top: 120px;
+}
+
+
+.questionFont{
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+    font-size: 30px;
+    border-radius: 8px;
+    border: 0.2px solid rgba(254,126,94);
+    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
+}
+
+.namePlaylist{
+    font-size: 24px;
+}
+
+.fontNumber{
+    font-size: 30px;
+}
+.fontEquipe{
+    font-size: 24px;
+}
+
+.fontName{
+    font-size:20px;
+}
+
+.responseContainer{
+    width: 545px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.equipe1, .equipe2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.response1, .response2, .response3, .response4{
+    width: 250px;
+    padding: 20px 5px 20px 5px;
+    border-radius: 8px;
+    border: 0.2px solid rgba(254,126,94);
+    box-shadow: 0 4px 4px rgba(254,126,94, 0.2);
+}

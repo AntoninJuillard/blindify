@@ -133,7 +133,7 @@ body{
 
 .section3{
     /* enlever la height quand on dev le compenent playlist */
-    height: 720px;
+    /* height: 720px; */
     background: #ffffff;
     padding: 90px;
     padding-top: 60px;
