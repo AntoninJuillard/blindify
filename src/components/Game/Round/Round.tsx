@@ -32,7 +32,7 @@ export default class Round extends Component <roundProps, roundState> {
     state = {
         tracksRound: this.setRandomTracks(),
         trueTrack: Math.floor(Math.random()*4),
-        chooseTeam: <section></section>
+        chooseTeam: ''
     }
 
     // generer 4 nouveaux morceaux aléatoires dans le state 
@@ -58,7 +58,7 @@ export default class Round extends Component <roundProps, roundState> {
         let state = {
             tracksRound: this.state.tracksRound,
             trueTrack: this.state.trueTrack,
-            chooseTeam: <section></section>
+            chooseTeam: ''
         }
         this.setState(state)
     }
