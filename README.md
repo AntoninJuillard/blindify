@@ -1,4 +1,3 @@
 # Blindify App
 
-Cette application permet de jouer au blind test avec des playlists importées de l'API de spotify
-
+This application allows you to play blindtests with playlists imported from the spotify API

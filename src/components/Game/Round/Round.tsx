@@ -35,7 +35,7 @@ export default class Round extends Component <roundProps, roundState> {
         chooseTeam: ''
     }
 
-    // generer 4 nouveaux morceaux aléatoires dans le state 
+    // generate 4 new random songs in the state 
     handleRandomTracks = () => {
         let tracklistCopy = [...this.props.tracks]
         let tracksRandom = {
@@ -74,9 +74,7 @@ export default class Round extends Component <roundProps, roundState> {
 
     handleTrueTrack = (id:number) => {
         if(id===this.state.trueTrack)
-        {
-            
-            
+        {                 
             this.handleChooseTeamDisplay()
             this.handleRandomTracks()
 

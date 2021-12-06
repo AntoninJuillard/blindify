@@ -23,18 +23,15 @@ export type gameState = {
 export default class Game extends Component <playlistProps, gameState>{
     
 
-    // transformer la tracklist des props en string artist - name 
+    // turn props tracklist into string artist - name 
     handleTracks = () => {
         let rawTrackList = this.props.playlist.tracks
         let trackList:string[] = []
         for(let i=0; i < rawTrackList.length; i++){
             trackList[i] = rawTrackList[i].artist + ' - ' + rawTrackList[i].trackname
         }
-        return trackList
-
-        
+        return trackList      
     }
-
 
     state = {
         tracks: this.handleTracks(),
@@ -43,11 +40,7 @@ export default class Game extends Component <playlistProps, gameState>{
         score2: 0
     }
 
-    
-
-
-
-    // attribuer le score 
+    // assign the score 
     handleScore = (team:number) => {
         if(team=== 1){
             let i= this.state.score1
@@ -72,7 +65,7 @@ export default class Game extends Component <playlistProps, gameState>{
         }        
     }
 
-    // supprimer la track envoyé
+    // delete the track sent
     handleDeleteTrack = (track:string) => {
         let tracks = this.state.tracks
         for(let i=0; i < tracks.length; i++){
@@ -88,7 +81,7 @@ export default class Game extends Component <playlistProps, gameState>{
         }
         this.setState(state)
     }
-    // definir les tracks du round 
+    // define the round's tracks
     handleTracksRound = (track1:string, track2:string, track3:string, track4:string) => {
         let state = {
             tracks: this.state.tracks,
@@ -112,7 +105,6 @@ export default class Game extends Component <playlistProps, gameState>{
                     </div>
                     <h2 className="playlistName">{this.props.playlist.name}</h2>
                     <div className="title" onClick={() => this.handleTracks()}>Quel est le nom de cette musique ?</div>
-                    {/* <div className="roundDisplay">/15</div> */}
                     <Round  tracks={this.state.tracks} tracksRound={this.state.tracksRound} handleTracksRound={this.handleTracksRound} handleScore={this.handleScore}/>
                     <div className='scoreDisplay scoreDisplayRight'>
                         <p className="scoreDisplayTitle">Equipe 2</p>  

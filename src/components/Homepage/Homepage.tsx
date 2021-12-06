@@ -21,9 +21,6 @@ export type PlaylistsState = {
     }
 }
 
-
-
-
 export default class Homepage extends React.Component<{}, PlaylistsState>{
     state = {
       playlist: [
@@ -54,15 +51,7 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
           tracks: [{artist:'', trackname:''}]
           
         }
-    }
-
-    
-
-    // handleSelect = (playlistClicked: { id: number; }) => {
-    //   const playlistSelect = [this.state.playlistSelected];
-    //   playlistSelect.push(playlistClicked);
-    //   this.setState({playlistSelected : playlistSelect })
-    // }
+    } 
 
     handleSelect = (playlistClickedId:number, playlistClickedName:string, playlistTrackList:{artist:string, trackname:string}[] ) => {
       let playlistSelected = { id:playlistClickedId, name: playlistClickedName, tracks:playlistTrackList}
@@ -72,18 +61,10 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
 
       this.setState(playlistNewState) 
     }
-    //sdilj={this.handleSelect}
   
-    // SI id = 0 render la homepage 
-    
-    
-
-
-    render() {
-        
+    render() {    
           if(this.state.playlistSelected.id === 0 ){
-          return (
-          
+          return (     
             <div className="Homepage">
               
                 <section className="section1">
@@ -107,9 +88,7 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
                 </section>
             </div>
         )
-        }
-
-        
+        }    
         else {
            return (
              <div>
@@ -118,7 +97,6 @@ export default class Homepage extends React.Component<{}, PlaylistsState>{
            )
          }
         
-    }
-    // SI id > 0 render le composant game
+    }  
 }
 

@@ -6,19 +6,13 @@ import Game from "../Game/Game";
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 
-
-//class App extends Component {
 function App() {
-
-
- //render(){
     return (
       <div className="App">
         
         <Router>
           <Routes>
             <Route path="/" element={<Homepage/>}/>
-            {/* <Route path="game" element={<Game/>}/> */}
           </Routes>
         </Router>
       </div>
